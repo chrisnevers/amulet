@@ -22,7 +22,7 @@ pipeline {
               stack build \
                 --ghc-options "-optc-static -optl-static -fhide-source-paths -Werror" \
                 --flag amuletml:amc-prove-server \
-                --test --no-run-tests -j3 \
+                --test --no-run-tests -j12 \
                 --fast
             '''
           }
@@ -36,7 +36,7 @@ pipeline {
           env AMC_LIBRARY_PATH=${PWD}/lib \
           stack test \
             --flag amuletml:amc-prove-server \
-            --test-arguments "-j3 --xml junit.xml --display t -v" \
+            --test-arguments "-j6 --xml junit.xml --display t -v" \
             --fast
         '''
       }
